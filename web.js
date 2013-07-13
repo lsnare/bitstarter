@@ -6,10 +6,10 @@ var app = express.createServer(express.logger());
 
 var file = fs.readFileSync("index.html");
 
-file.toString("utf-8", 0, 10);
+var file_string = file.toString();
 
 app.get('/', function(request, response) {
-  response.send(file);
+  response.send(file_string);
 });
 var port = process.env.PORT || 5000;
 app.listen(port, function() {
